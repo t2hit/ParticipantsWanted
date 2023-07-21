@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MessageBOX</title>
+    <title>電動キックボード</title>
     <link rel=stylesheet type=text/css href="{{ url_for("static", filename="style.css") }}">
 </head>
 <body>
     <div class="page">
-        <h1><a href="{{ url_for('index') }}">MessageBOX</a></h1>
+        <h1><a href="{{ url_for('index') }}">【事前登録受付中！】電動キックボードシェアリングサービス</a></h1>
+        <!-- #ここに画像をいれる。staticフォルダに画像格納して、ファイル名を記載 -->
+        <img src="{{ url_for('static', filename='test.jpg') }}" alt="Description of image" class="myImage">
+        <h3><a href="{{ url_for('index') }}">【サービス概要】</a></h3>
+        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。参加を希望される方は下記のあかさたなはまやらわあかさたなはまやらわあかさたなはまやらわ</a></h5>
+        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。</a></h5>
+        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。</a></h5>
         <div class=metanav>
             {% if not current_user.is_authenticated %}
             <a href="{{ url_for('login') }}">LogIn</a>
