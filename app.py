@@ -61,7 +61,7 @@ def login():
         user = User.select().where(User.email == request.form["email"]).first()
         if user is not None and check_password_hash(user.password, request.form["password"]):
             login_user(user)
-            flash(f"ようこそ！ {user.name} さん")
+            flash(f"おかえりなさい！ {user.name} さん")
             return redirect(url_for("index"))
         else:
             flash("認証に失敗しました")
@@ -73,7 +73,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash("ログアウトしました！")
+    flash("ログアウトしました！また来てね！")
     return redirect(url_for("index"))
 
 

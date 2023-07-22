@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>電動キックボード</title>
+    <title>平泉初！電動キックボードシェアリングサービス</title>
     <link rel=stylesheet type=text/css href="{{ url_for("static", filename="style.css") }}">
 </head>
 <body>
     <div class="page">
-        <h1><a href="{{ url_for('index') }}">【事前登録受付中！】電動キックボードシェアリングサービス</a></h1>
+        <h1><a href="{{ url_for('index') }}">【事前登録受付中！】</a></h1>
+        <h1><a href="{{ url_for('index') }}"> 電動キックボードシェアリングサービス</a></h1>
         <!-- #ここに画像をいれる。staticフォルダに画像格納して、ファイル名を記載 -->
-        <img src="{{ url_for('static', filename='test.jpg') }}" alt="Description of image" class="myImage">
-        <h3><a href="{{ url_for('index') }}">【サービス概要】</a></h3>
-        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。参加を希望される方は下記のあかさたなはまやらわあかさたなはまやらわあかさたなはまやらわ</a></h5>
-        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。</a></h5>
-        <h5><a href="{{ url_for('index') }}">○年○月○日に電動キックボードの実証実験を行います。</a></h5>
+        <img src="{{ url_for('static', filename='test3.jpg') }}" alt="Description of image" class="myImage">
+        <h1><a href="{{ url_for('index') }}">【サービス概要】</a></h1>
+        <h2><a href="{{ url_for('index') }}">平泉町で電動キックボードのシェアリングサービスが始まります！</a></h2>
+        <h2><a href="{{ url_for('index') }}">観光の新しい交通手段として、通勤や通学の移動手段として、さまざまなシーンで活用いただけます。</a></h2>
+        <h2><a href="{{ url_for('index') }}">2023年9月頃のスタートに先立ち利用希望者の事前登録を受け付けます。</a></h2>
         <div class=metanav>
             {% if not current_user.is_authenticated %}
-            <a href="{{ url_for('login') }}">LogIn</a>
-            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('register') }}">参加希望の方は【ココから登録】</a>
+            <a href="{{ url_for('login') }}">//登録済みの方は【ココからログイン】</a>
             {% else %}
-            <a href="{{ url_for('logout') }}">LogOut</a>
+            <a href="{{ url_for('logout') }}">ログアウトしてTOPページへ戻る</a>
             {% endif %}
         </div>
         {% for message in get_flashed_messages() %}
