@@ -47,7 +47,7 @@ def register():
                 password=generate_password_hash(request.form["password"]),
             )
             login_user(user)
-            flash(f"ようこそ！ {user.name} さん")
+            flash(f"参加登録ありがとうございます！ {user.name} さん")
             return redirect(url_for("index"))
         except IntegrityError:
             flash("登録に失敗しました")

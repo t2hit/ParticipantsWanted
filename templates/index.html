@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content%}
 {% if current_user.is_authenticated %}
-<h2>応援メッセージをお願いします！</h2>
+<h2>応援メッセージの投稿をお願いします！</h2>
 <form action="{{ url_for('index') }}" method="post">
     <div>Message:</div>
-    <div><textarea name="content" placeholder="平泉にもっと観光客が増えて欲しいのでガンバレ！"></textarea></div>
+    <div><textarea name="content" placeholder="（例）平泉にもっと観光客が増えて欲しいのでガンバレ！"></textarea></div>
     <div><input type="submit" value="Create" /></div>
 </form>
 {% endif %}
@@ -18,7 +18,7 @@
             {{ message.user.name }} {{ message.pub_date }}
             {% if message.user == current_user %}
             <form action="{{ url_for('delete', message_id=message.id) }}" method="post" style="display:inline;">
-                <input type="submit" value="削除" onclick="if(!confirm('メッセージを削除しても平泉のことは嫌いにならなでください！')) return false">
+                <input type="submit" value="削除" onclick="if(!confirm('メッセージを削除しても平泉のことは嫌いにならないでください！')) return false">
             </form>
             {% endif %}
             <div class="message-content">

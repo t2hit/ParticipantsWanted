@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content%}
 {% if current_user.is_authenticated %}
-<h2>Create</h2>
+<h2>応援メッセージに返信できます！</h2>
 <form action="{{ url_for('reply', message_id=message_id) }}" method="post">
     <div>Message:</div>
-    <div><textarea name="content" placeholder="今の気分はいかがですか？"></textarea></div>
+    <div><textarea name="content" placeholder="言い足りない事はありませんか？"></textarea></div>
     <div><input type="submit" value="Create" /></div>
 </form>
 {% endif %}
